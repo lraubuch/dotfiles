@@ -1,0 +1,12 @@
+# /dev/sdb2 UUID=41c83aab-c6d9-4046-acd8-364e415f8a5c
+LABEL=p_arch        	/         	ext4      	rw,defaults,noatime,discard	0 1
+
+# /dev/sdb1 UUID=9DAA-A0DA
+LABEL=EFIBOOT       	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda1 UUID=27a05ea5-c07a-4772-a2b9-cd4738b35c4a
+LABEL=p_home        	/home     	ext4      	rw,relatime,data=ordered	0 2
+
+# /dev/sdb3 UUID=2ea43e71-c17b-470d-9d64-bf691edbe4b9
+LABEL=p_swap        	none      	swap      	defaults,noatime,discard,pri=-2	0 0
+
