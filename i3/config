@@ -1,0 +1,297 @@
+# vim:filetype=i3
+# i3 config file (v4)
+
+################################################################################
+#                                 /VARIABLES\                                  #
+################################################################################
+set $mod Mod4
+set $wallpaper /home/lukas/.config/wallpaper.jpg
+set $term urxvt
+set $shutdown shutdown -h now
+set $reboot sudo reboot
+set $rofi rofi -show run 
+set $hibernate systemctl hibernate
+set $browser chromium
+set $polybar $HOME/.config/polybar/launch.sh
+################################################################################
+#                                 \VARIABLES/                                  #
+################################################################################
+
+################################################################################
+#                                   /COLORS\                                   #
+################################################################################
+# class					<border  <backgr  <text    <indica  <childb
+client.focused			#1F1F1F  #1F1F1F  #F3F4F5  #00FF00  #444444
+client.focused_inactive #2F343F  #2F343F  #676E7D  #00FF00  #1F1F1F
+client.unfocused        #2F343F  #2F343F  #FFFFFF  #00FF00  #1F1F1F
+client.urgent			#E53935  #E53935  #F3F4F5  #00FF00  #444444
+client.background		#FFFFFF
+################################################################################
+#                                   \COLORS/                                   #
+################################################################################
+
+font pango:System San Francisco Display Regular 12
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+hide_edge_borders smart
+
+################################################################################
+#                                 /WORKSPACES\                                 #
+################################################################################
+# use variables to specify each workspace 
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+# switching to workspaces
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+# moving focused containers between workspaces
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+################################################################################
+#                                 \WORKSPACES/                                 #
+################################################################################
+
+################################################################################
+#                                  /BINDSYMS\                                  #
+################################################################################
+#bindsym $mod+a
+#bindsym $mod+Shift+a
+
+#bindsym $mod+b
+#bindsym $mod+Shift+b
+
+#bindsym $mod+c
+#bindsym $mod+Shift+c 
+
+#bindsym $mod+d
+#bindsym $mod+Shift+d
+
+#bindsym $mod+e
+#bindsym $mod+Shift+e
+
+#bindsym $mod+f
+#bindsym $mod+Shift+f
+
+#bindsym $mod+g
+#bindsym $mod+Shift+g
+
+bindsym $mod+h		 focus left
+bindsym $mod+Shift+h move left 30
+
+#bindsym $mod+i
+bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
+
+bindsym $mod+j		 focus down
+bindsym $mod+Shift+j move down 30
+
+bindsym $mod+k		 focus up
+bindsym $mod+Shift+k move up 30
+
+bindsym $mod+l		 focus right
+bindsym $mod+Shift+l move right 30
+
+#bindsym $mod+m
+#bindsym $mod+Shift+m
+
+#bindsym $mod+n
+#bindsym $mod+Shift+n
+
+#bindsym $mod+o
+bindsym $mod+Shift+o resize shrink height 10 px or 10 ppt
+
+#bindsym $mod+p
+bindsym $mod+Shift+p resize grow width 10 px or 10 ppt
+
+bindsym $mod+q kill
+bindsym $mod+Shift+q kill
+
+bindsym $mod+r exec --no-startup-id urxvt -e "ranger"
+bindsym $mod+Shift+r exec --no-startup-id $term -e sudo ranger /
+
+#bindsym $mod+s
+#bindsym $mod+Shift+s
+
+bindsym $mod+t split h
+bindsym $mod+Shift+t split v
+
+#bindsym $mod+u
+bindsym $mod+Shift+u resize shrink width 10 px or 10 ppt
+
+#bindsym $mod+v
+#bindsym $mod+Shift+v
+
+#bindsym $mod+w
+bindsym $mod+Shift+w exec $browser
+
+#bindsym $mod+x
+#bindsym $mod+Shift+x
+
+#bindsym $mod+y
+#bindsym $mod+Shift+y
+
+#bindsym $mod+z
+#bindsym $mod+Shift+z
+
+#bindsym $mod+Backspace
+bindsym $mod+Shift+Backspace exec $reboot
+
+#bindsym $mod+Escape
+bindsym $mod+Shift+Escape exec i3-msg exit
+
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return gaps inner current set 10;gaps outer current set 10
+
+bindsym $mod+Left  focus left
+bindsym $mod+Shift+Left  move left 30
+
+bindsym $mod+Down  focus down
+bindsym $mod+Shift+Down  move down 30
+
+bindsym $mod+Up    focus up
+bindsym $mod+Shift+Up    move up 30
+
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Right move right 30
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+bindsym $mod+plus gaps inner current plus 10
+bindsym $mod+Shift+plus gaps inner current minus 10
+
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+Tab workspace next
+#bindsym $mod+Shift+Tab 
+
+bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+Shift+x exec $shutdown
+
+## Function-Keys
+#bindsym F1
+#bindsym F2
+#bindsym F3
+#bindsym F4
+#bindsym F5
+#bindsym F6
+#bindsym F7
+#bindsym F8
+#bindsym F9
+#bindsym F10
+bindsym F11 fullscreen toggle
+#bindsym F12
+
+bindsym $mod+F1 reload
+bindsym $mod+F2 restart
+#bindsym $mod+F3
+bindsym $mod+F4 exec $hibernate
+#bindsym $mod+F5
+#bindsym $mod+F6
+#bindsym $mod+F7
+#bindsym $mod+F8
+#bindsym $mod+F9
+bindsym $mod+F10 layout stacking
+bindsym $mod+F11 layout tabbed
+bindsym $mod+F12 layout toggle split 
+
+bindsym Print 		exec --no-startup-id scrot
+bindsym Shift+Print exec --no-startup-id scrot -u
+
+bindsym Menu exec --no-startup-id $rofi
+
+################################################################################
+#                                  \BINDSYMS/                                  #
+################################################################################
+
+################################################################################
+#                                    /BAR\                                     #
+################################################################################
+exec_always --no-startup-id $polybar
+################################################################################
+#                                    \BAR/                                     #
+################################################################################
+
+################################################################################
+#                                  /FN-KEYS\                                   #
+################################################################################
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+################################################################################
+#                                  \FN-KEYS/                                   #
+################################################################################
+
+################################################################################
+#                                 /AUTOSTART\                                  #
+################################################################################
+exec --no-startup-id $term
+exec --no-startup-id chromium
+exec --no-startup-id teamspeak3
+exec_always --no-startup-id compton
+################################################################################
+#                                 \AUTOSTART/                                  #
+################################################################################
+
+################################################################################
+#                                /ASSIGNMENTS\                                 #
+################################################################################
+assign [class="Chromium"] $ws2
+assign [class="TeamSpeak 3"] $ws9
+assign [class="Spotify"] $ws10
+################################################################################
+#                                \ASSIGNMENTS/                                 #
+################################################################################
+
+################################################################################
+#                                 /WALLPAPER\                                  #
+################################################################################
+exec_always feh --bg-scale $wallpaper
+################################################################################
+#                                 \WALLPAPER/                                  #
+################################################################################
+
+################################################################################
+#                                   /GAPS\                                     #
+################################################################################
+for_window [class="^.*"] border pixel 3
+gaps inner 25
+gaps outer 15
+################################################################################
+#                                   \GAPS/                                     #
+################################################################################
